@@ -1,2 +1,9 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<br><br><h1>Bienvenue sur ta page <%= @user.first_name%></h1><br><br><hr></hr>
+<p>Ton prénom: <%= @user.first_name%></p>
+<p>Ton nom: <%= @user.last_name%></p>
+<p>Ton email : <%= @user.email%></p>
+<li class="nav-item"> <%= link_to "Modifie ton profil", edit_user_registration_path,   class:"nav-link" %> </li>
+<li class="nav-item"> <%= link_to "Complète ton profil", edit_user_path,   class:"nav-link" %> </li>
+<hr></hr>
+
+<h2>Tes événements</h2>

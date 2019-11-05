@@ -13,7 +13,11 @@ class EventsController < ApplicationController
     # Une fois la création faite, on redirige généralement vers la méthode show (pour afficher le potin créé)
     u = User.first
     @event = Event.new(title: params[:title], 
-    content: params[:duration])
+    start_date: params[:start_date],
+    duration: params[:duration],
+    description: params[:description],
+    location: params[:location],
+    price: params[:price] )
     @event.user = u
     if @event.save # essaie de sauvegarder en base @gossip
       # si ça marche, il redirige vers la page d'index du site
