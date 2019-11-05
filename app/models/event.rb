@@ -15,4 +15,7 @@ class Event < ApplicationRecord
   def future_event
     errors.add(:date, "Can't be in the past!") if date < Date.today
   end
+  def event_send
+    EventMailer.event_email(self).deliver_now
+  end
 end

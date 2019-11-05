@@ -12,7 +12,8 @@ class EventsController < ApplicationController
     # Méthode qui créé un potin à partir du contenu du formulaire de new.html.erb, soumis par l'utilisateur
     # Une fois la création faite, on redirige généralement vers la méthode show (pour afficher le potin créé)
     u = User.first
-    @event = Event.new(title: params[:title], content: params[:duration])
+    @event = Event.new(title: params[:title], 
+    content: params[:duration])
     @event.user = u
     if @event.save # essaie de sauvegarder en base @gossip
       # si ça marche, il redirige vers la page d'index du site
