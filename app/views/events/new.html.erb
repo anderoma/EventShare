@@ -1,0 +1,31 @@
+<html>
+  <body>
+    <div class="container">
+      <h1> Créer ton événement </h1>
+      <%= form_tag url_for(action: 'create'), method: "post" do %>
+      <input type="hidden" name="authenticity_token" value= <%= form_authenticity_token %> >
+      <br />
+      <%= label_tag "Titre de l'événement" %>
+      <%= text_field_tag 'title', @event.title %>
+      <%= label_tag "Date de début" %>
+      <%= text_field_tag 'start_date', @event.start_date %>
+      <%= label_tag "Durée" %>
+      <%= text_field_tag 'duration', @event.duration %>
+      <br /> <br />
+
+      <%= label_tag "Description" %>
+      <%= text_area_tag 'description', @event.description %>
+      <br /> <br />
+
+      <%= label_tag "Localisation" %>
+      <%= text_field_tag 'location', @event.location %>
+      <%= label_tag "Prix" %>
+      <%= text_field_tag 'price', @event.price %>
+      <br /> <br />
+      
+      <%= submit_tag "Créer cette événement" %>
+
+      <% end %>
+    </div>
+  </body>
+</html>
